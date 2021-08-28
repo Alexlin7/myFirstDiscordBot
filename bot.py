@@ -21,14 +21,6 @@ bot = commands.Bot(command_prefix='[', intents = intents)
 async def on_ready():
     print(">> Bot is online <<")
 
-@bot.event
-async def on_member_join(member):
-    print(f'{member} join!')
-
-
-@bot.event
-async def on_member_remove(member):
-    print(f'{member} leave!')
 
 @bot.command()
 async def load(ctx,extension):
