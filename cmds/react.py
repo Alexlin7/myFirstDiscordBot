@@ -9,13 +9,13 @@ with open('setting.json',mode='r',encoding='utf8') as jfile:
 
 class React(Cog_Extension):
     @commands.command()
-    async def 圖片(self,ctx):
+    async def 圖片(self, ctx):
         random_photo = random.choice(jdata['photo'])
         photo = discord.File(random_photo)
         await ctx.send(file = photo)
 
     @commands.command()
-    async def 網路圖片(self,ctx):
+    async def 網路圖片(self, ctx):
         random_url_photo = random.choice(jdata['url_photo'])
         await ctx.send(random_url_photo)
 

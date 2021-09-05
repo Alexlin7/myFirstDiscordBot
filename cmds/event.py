@@ -11,18 +11,18 @@ with open('setting.json',mode='r',encoding='utf8') as jfile:
 
 class Event(Cog_Extension):
     @commands.Cog.listener()
-    async def on_member_join(self,member):
+    async def on_member_join(self, member):
         channel = self.bot.get_channel(int(jdata['Welcome_channel']))
         await channel.send(f'{member} join!')
 
 
     @commands.Cog.listener()
-    async def on_member_remove(self,member):
+    async def on_member_remove(self, member):
         channel = self.bot.get_channel(int(jdata['Bye_channel']))
         await channel.send(f'{member} leave!')
 
     @commands.Cog.listener()
-    async def on_message(self,msg):
+    async def on_message(self, msg):
         if msg.content == '那沒事了' and msg.author != self.bot.user:
             await msg.channel.send(jdata['NMSL'])
 
