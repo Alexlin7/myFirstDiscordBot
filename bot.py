@@ -4,7 +4,7 @@ from discord import file
 from discord.ext import commands
 from discord.flags import Intents
 import json
-import random, os
+import os
 
 with open('setting.json',mode='r',encoding='utf8') as jfile:
     jdata = json.load(jfile)
