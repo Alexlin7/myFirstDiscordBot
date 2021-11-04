@@ -13,13 +13,14 @@ class Task(Cog_Extension):
 
         async def time_task():
             await self.bot.wait_until_ready()
-            self.channel = self.bot.get_channel(883986916796682290)
+            self.channel = self.bot.get_channel(883986916796682290) #啟動bot時預設發送訊息的channel
 
             while not self.bot.is_closed():
                 if(self.oc == True):
                     with open('setting.json','r',encoding='utf-8') as jfile:
                         jdata = json.load(jfile)
                     now_time = datetime.datetime.now().strftime('%H%M')
+                    
                     if now_time == jdata['task_time'] and self.counter == 0:
                         await self.channel.send(jdata['task_msg'])                                                
                         self.counter = 1
